@@ -50,17 +50,18 @@ public:
 
 int main()
 {
-	People tyler; // make an object "tyler" with class "People"
-	tyler.setFName("John");
-	tyler.setLName("Doe");
-	tyler.setAge(21);
-	cout << "Name: " << tyler.getFName() << " " << tyler.getLName() << endl << "Age: " <<
-		tyler.getAge() << endl << endl;
-
-	tyler.setFName("Jane");
-	tyler.setLName("Doe");
-	tyler.setAge(23);
-	cout << "Name: " << tyler.getFName() << " " << tyler.getLName() << endl << "Age: " <<
-		tyler.getAge();
+	People john; // make an object "john" with class "People"
+	john.setFName("John");
+	john.setLName("Doe");
+	john.setAge(21);
+	cout << "Name: " << john.getFName() << " " << john.getLName() << endl << "Age: " <<
+		john.getAge() << endl << endl;
+	
+	People jane; // make an object "jane" with class "People"
+	jane.setFName("Jane");
+	jane.setLName("Doe");
+	jane.setAge(23);
+	cout << "Name: " << jane.getFName() << " " << jane.getLName() << endl << "Age: " <<
+		jane.getAge();
 }
 
