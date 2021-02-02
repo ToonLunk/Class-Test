@@ -7,23 +7,60 @@ using namespace std;
 class People
 {
 private:
-	string fName; // for first name
-	string lName; // for last name
-	int age; // for age
+	string userFirstName; // for first name
+	string userLastName; // for last name
+	int userAge; // for age
 
 public:
-	void setFName(string);
-	void setLName(string);
-	int setAge(int);
+	
+	// Mutators
 
-	// "string" or "int" before definition shows what the return type will be
-	string getFName() const; // const means it will not alter data
-	string getLName() const;
-	int getAge() const;
+	void setFName(string name)
+	{
+		userFirstName = name;
+	}
+
+	void setLName(string name)
+	{
+		userLastName = name;
+	}
+
+	void setAge(int age)
+	{
+		userAge = age;
+	}
+
+	// accessors
+
+	string getFName() const
+	{
+		return userFirstName;
+	}
+
+	string getLName() const
+	{
+		return userLastName;
+	}
+
+	int getAge() const
+	{
+		return userAge;
+	}
 };
 
 int main()
 {
-	cout << "Hello World!\n";
+	People tyler; // make an object "tyler" with class "People"
+	tyler.setFName("John");
+	tyler.setLName("Doe");
+	tyler.setAge(21);
+	cout << "Name: " << tyler.getFName() << " " << tyler.getLName() << endl << "Age: " <<
+		tyler.getAge() << endl << endl;
+
+	tyler.setFName("Jane");
+	tyler.setLName("Doe");
+	tyler.setAge(23);
+	cout << "Name: " << tyler.getFName() << " " << tyler.getLName() << endl << "Age: " <<
+		tyler.getAge();
 }
 
