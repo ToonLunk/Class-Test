@@ -4,64 +4,88 @@
 #include <iostream>
 using namespace std;
 
-class People
+class Items
 {
 private:
-	string userFirstName; // for first name
-	string userLastName; // for last name
-	int userAge; // for age
+	int itemID;
+	double itemPrice;
+	int itemQuantity;
 
 public:
-	
-	// Mutators
 
-	void setFName(string name)
+	Items()
 	{
-		userFirstName = name;
+		itemID = 0;
+		itemPrice = 0;
+		itemQuantity = 0;
 	}
 
-	void setLName(string name)
+	Items(int id)
 	{
-		userLastName = name;
+		itemID = id;
+		itemPrice = 0;
+		itemQuantity = 0;
 	}
 
-	void setAge(int age)
+	Items(int id, double price)
 	{
-		userAge = age;
+		itemID = id;
+		itemPrice = price;
+		itemQuantity = 0;
 	}
 
-	// accessors
-
-	string getFName() const
+	Items(int id, double price, int quantity)
 	{
-		return userFirstName;
+		itemID = id;
+		itemPrice = price;
+		itemQuantity = quantity;
 	}
 
-	string getLName() const
+	void setItemID(int id)
 	{
-		return userLastName;
+		itemID = id;
 	}
 
-	int getAge() const
+	void setItemPrice(double price)
 	{
-		return userAge;
+		itemPrice = price;
+	}
+
+	void setItemQuantity(int quantity)
+	{
+		itemQuantity = quantity;
+	}
+
+	int getItemID()
+	{
+		return itemID;
+	}
+
+	double getItemPrice()
+	{
+		return itemPrice;
+	}
+
+	int getItemQuantity()
+	{
+		return itemQuantity;
+	}
+
+	void displayInfo()
+	{
+		cout << "Item ID#: " << itemID << ". Item Price: $" << itemPrice << 
+			". Item Quantity: " << itemQuantity << endl;
 	}
 };
 
 int main()
 {
-	People john; // make an object "john" with class "People"
-	john.setFName("John");
-	john.setLName("Doe");
-	john.setAge(21);
-	cout << "Name: " << john.getFName() << " " << john.getLName() << endl << "Age: " <<
-		john.getAge() << endl << endl;
-	
-	People jane; // make an object "jane" with class "People"
-	jane.setFName("Jane");
-	jane.setLName("Doe");
-	jane.setAge(23);
-	cout << "Name: " << jane.getFName() << " " << jane.getLName() << endl << "Age: " <<
-		jane.getAge();
+	Items soda(1, 1.99, 50);
+	Items tissue(2, 5.69, 35);
+	Items bread(3, 2.39, 12);
+	Items apples(4, 0.59, 32);
+
+	soda.displayInfo();
+
 }
 
